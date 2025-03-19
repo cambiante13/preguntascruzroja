@@ -1,8 +1,7 @@
 
 #ifndef BLOODDATABASE_H
-#define BLOODDATABASE_H 
+#define BLOODDATABASE_H
 
-#include <map> // para std::map
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -27,11 +26,6 @@ public:
     void searchAndDisplay() const;
     void deleteDonor(const std::string& donorName);
     void Display() const;
-
-    std::map<std::string, double> getBloodTypePercentages() const; //
-    std::string getMostCommonBloodType() const; //
-    std::string getPredominantBloodType() const; //
-    std::map<std::string, double> getPopulationBloodTypePercentages() const; //
 };
 
 #endif // BLOODDATABASE_H

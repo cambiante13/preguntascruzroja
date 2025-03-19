@@ -1,7 +1,8 @@
+
 #include "Donor.h"
-#include "Utils.h"
-#include <iostream>
 #include <sstream>
+#include <iostream>
+#include <algorithm>
 
 void Donor::donorDetails() const {
     std::cout << "Nombre del donante: " << name << std::endl;
@@ -14,12 +15,18 @@ Donor Donor::parseLine(const std::string& line) {
     std::stringstream ss(line);
     std::string token;
 
-    getline(ss, token, ','); d.setDonorId(std::stoi(Utils::trim(token)));  // 
-    getline(ss, token, ','); d.setName(Utils::trim(token));  // 
-    getline(ss, token, ','); d.setAddress(Utils::trim(token));  // 
-    getline(ss, token, ','); d.setDistrict(std::stoi(Utils::trim(token)));  // 
-    getline(ss, token, ','); d.setBloodType(Utils::trim(token));  // 
-    getline(ss, token, ','); d.setNumber(Utils::trim(token));  // 
-
+    getline(ss, token, ','); d.donorId = std::stoi(trim(token));
+    getline(ss, token, ','); d.name = trim(token);
+    getline(ss, token, ','); d.address = trim(token);
+    getline(ss, token, ','); d.district = std::stoi(trim(token));
+    getline(ss, token, ','); d.bloodType = trim(token);
+    getline(ss, token, ','); d.number = trim(token);
     return d;
+}
+
+std::string Donor::trim(const std::string& str) {
+    size_t first = str.find_first_not_of(' ');
+    if (first == std::string::npos) return "";
+    size_t last = str.find_last_not_of(' ');
+    return str.substr(first, (last - first + 1));
 }
