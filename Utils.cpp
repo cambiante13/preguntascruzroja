@@ -43,7 +43,7 @@ int Utils::getValidatedInput(const std::string& prompt) {
 //Nuevo metodo anadido que permite validar el tipo de sangre
 std::string Utils::getValidatedBloodType(const std::string& prompt) {
     const std::vector<std::string> validBloodTypes = {
-        "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
+        "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-", "a+", "a-", "b+", "b-", "ab+", "ab-", "o+", "o-" 
     };
     std::string input;
     while (true) {

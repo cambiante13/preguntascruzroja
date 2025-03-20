@@ -26,3 +26,4 @@
 34872,    Juanito,    390472,    4,    A+,    
 39424,    Sofia Gomez,    Calle 45 9234,    2,    O+,    
 873429,    Valentina,    LosANdes,    4,    A+,    
+534534,    Pepito Perez,    Calle 48 293 2,    4,    o+,    
