@@ -13,7 +13,7 @@ public:
     static std::string trim(const std::string& str); //Metodo anteriormente de la clase DOnor
     static int getValidatedInput(const std::string& prompt); //Metodo anteriormente de BloodDatabase
     static std::string getValidatedBloodType(const std::string& prompt); //Metodo nuevo de validacion de tipo de ssangre
-    static std::string getValidatedPhoneNumber(const std::string& prompt); //Metodo nuevo de validacion de telefono[A cambiar por API]
+
 };
 
 #endif

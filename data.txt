@@ -23,3 +23,6 @@
 347892,    Valen Tinita,    Calle 37b 37 8,    2,    O-,    2919293842
 3234,    Juanito Perez,    Calle 45 3023,    2,    A+,    2938172830
 328472,    Juaaaanito,    SIloe ,    4,    O+,    8372947293
+34872,    Juanito,    390472,    4,    A+,    
+39424,    Sofia Gomez,    Calle 45 9234,    2,    O+,    
+873429,    Valentina,    LosANdes,    4,    A+,    

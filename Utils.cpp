@@ -56,13 +56,3 @@ std::string Utils::getValidatedBloodType(const std::string& prompt) {
         }
     }
 }
-
-
-//Nuevo metodo anadido que permite validar el tipo de telefono [Cambiarlo por la API]
-std::string Utils::getValidatedPhoneNumber(const std::string& number) {
-    if (number.length() == 10 && std::all_of(number.begin(), number.end(), ::isdigit)) {
-        return number; // Si el número de teléfono es válido, retornarlo
-    } else {
-        throw std::invalid_argument("Número de teléfono no válido. Debe tener exactamente 10 dígitos.");
-    }
-}

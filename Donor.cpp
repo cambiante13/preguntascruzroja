@@ -36,11 +36,5 @@ void Donor::setBloodType(const std::string& blood, bool validate) {
 }
 
 void Donor::setNumber(const std::string& num, bool validate) {
-    if (validate) {
-        // Usa el método de Utils para validar y obtener un número de teléfono válido
-        number = Utils::getValidatedPhoneNumber("Ingrese el número de teléfono (10 dígitos): ");
-    } else {
-        // Asigna directamente el valor (sin validarlo)
         number = num;
-    }
 }

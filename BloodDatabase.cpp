@@ -103,11 +103,10 @@ void BloodDatabase::getDonorDetails() {
   std::string bloodType = Utils::getValidatedBloodType("Tipo de sangre: ");
   newDonor.setBloodType(bloodType, false);
 
-  // Pide el numero de telefono y valida el mismo mediante el metodo de utils
+  // Pide el numero de telefono pero aun no valida [FALTA EL API]
   std::cout << "Número: ";
   std::string number;
   std::getline(std::cin, number);
-  newDonor.setNumber(Utils::getValidatedPhoneNumber(number), false); // Validar el número
 
   donors.push_back(newDonor);
 }
@@ -293,36 +292,4 @@ void BloodDatabase::Display() const {
 
   inFile.close();
   waitForKeyPress();
-}
-
-// De aqui pabajo es lo que agregue
-
-std::map<std::string, double> BloodDatabase::getBloodTypePercentages() const {
-  std::map<std::string, int> bloodTypeCounts;
-  for (const auto &donor : donors) {
-    bloodTypeCounts[donor.getBloodType()]++;
-  }
-
-  std::map<std::string, double> percentages;
-  int totalDonors = donors.size();
-  for (const auto &count : bloodTypeCounts) {
-    percentages[count.first] =
-        (static_cast<double>(count.second) / totalDonors * 100);
-  }
-
-  return percentages;
-}
-
-std::string BloodDatabase::getMostCommonBloodType() const {
-  std::map<std::string, int> bloodTypeCounts;
-  for (const auto &donor : donors) {
-    bloodTypeCounts[donor.getBloodType()]++;
-  }
-
-  auto max = std::max_element(
-      bloodTypeCounts.begin(), bloodTypeCounts.end(),
-      [](const std::pair<std::string, int> &a,
-         const std::pair<std::string, int> &b) { return a.second < b.second; });
-
-  return max->first;
 }
