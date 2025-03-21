@@ -16,3 +16,14 @@
 1,    1,    1,    1,    1,    1
 31573541,    Kathe,    Coruna,    3,    A+,    3137675067
 873,    Oriana Isabel,    La house,    6,    B+,    gato300257
+34534,    Juanito Perez,    Crra 3 482,    2,    P,    3820472942
+34982,    Juan Gomez,    Crra 48 273,    1,    p,    3948204234
+3842,    Juan Juanito,    Crra 29 38,    1,    A+,    1927382945
+927320,    Help Me MuchoLinux,    Calle 37b 37 29,    2,    O-,    2849274930
+347892,    Valen Tinita,    Calle 37b 37 8,    2,    O-,    2919293842
+3234,    Juanito Perez,    Calle 45 3023,    2,    A+,    2938172830
+328472,    Juaaaanito,    SIloe ,    4,    O+,    8372947293
+34872,    Juanito,    390472,    4,    A+,    
+39424,    Sofia Gomez,    Calle 45 9234,    2,    O+,    
+873429,    Valentina,    LosANdes,    4,    A+,    
+534534,    Pepito Perez,    Calle 48 293 2,    4,    o+,    
