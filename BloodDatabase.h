@@ -1,7 +1,8 @@
 
 #ifndef BLOODDATABASE_H
-#define BLOODDATABASE_H
+#define BLOODDATABASE_H 
 
+#include <map> // para std::map
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -26,6 +27,7 @@ public:
     void searchAndDisplay() const;
     void deleteDonor(const std::string& donorName);
     void Display() const;
+
 };
 
-#endif // BLOODDATABASE_H
+#endif 
