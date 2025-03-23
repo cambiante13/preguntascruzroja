@@ -1,4 +1,3 @@
-//Clase nueva ya que trim no era necesario poner en Donor pues se necesita en otras clases asi que le hice una
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -6,14 +5,21 @@
 #include <vector>
 #include <algorithm>
 
+// Clase de utiles, hace validaciones y manipula cadenas
+
 class Utils {
 public:
-    //No hay datos privados debido que la asbtraccion de la funcion no lo requiere y aun asi cumple el encapsulamiento, no hay datos delicados
+    // Elimina espacios en blanco al inicio y final de una cadena
+    static std::string trim(const std::string& str);
 
-    static std::string trim(const std::string& str); //Metodo anteriormente de la clase DOnor
-    static int getValidatedInput(const std::string& prompt); //Metodo anteriormente de BloodDatabase
-    static std::string getValidatedBloodType(const std::string& prompt); //Metodo nuevo de validacion de tipo de ssangre
+    // Valida si una cadena es un número válido
+    static bool isValidNumber(const std::string& input);
 
+    // Convierte una cadena en un número entero
+    static int convertToInt(const std::string& input);
+
+    // Solicita y valida un tipo de sangre válido
+    static std::string getValidatedBloodType(const std::string& prompt);
 };
 
 #endif
