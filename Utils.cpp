@@ -2,14 +2,7 @@
 #include <iostream>
 #include <cctype>
 
-/*
-Esta es la clase nueva anadida al codigo, donde se movio el metodo Trim anteriormente en la clase donor, para poder usarse de manera mas general.
-De igual manera se movio getValidatedInput para usarse en mas partes del programa y a su vez se reutilizo parte de su estructura para crear el 
-getValidatedBloodTypes y el getValidatedPhoneNumber.
-*/
-
-
-//Metodo anteriormente perteneciente a donor que permite eliminar vacios tanto al inicio como al final de una cadena
+// Elimina espacios en blanco al inicio y final de una cadena
 std::string Utils::trim(const std::string& str) {
     size_t first = str.find_first_not_of(' ');
     if (first == std::string::npos) return "";
@@ -17,30 +10,23 @@ std::string Utils::trim(const std::string& str) {
     return str.substr(first, (last - first + 1));
 }
 
-//Metodo anteriormente perteneciente a Bloodatabase 
-int Utils::getValidatedInput(const std::string& prompt) {
-    int value;
-    std::string input;
-    while (true) {
-        std::cout << prompt;
-        std::getline(std::cin, input);
-        try {
-            if (!std::all_of(input.begin(), input.end(), ::isdigit)) {
-                throw std::invalid_argument("La entrada contiene caracteres no numéricos");
-            }
-            value = std::stoi(input);
-            break; // si la conversión es exitosa, salir del bucle
-        } catch (const std::invalid_argument& e) {
-            std::cout << "Entrada no válida: " << e.what() << ". Por favor ingrese un número válido." << std::endl;
-        } catch (const std::out_of_range&) {
-            std::cout << "Entrada fuera de rango. Por favor ingrese un número válido." << std::endl;
-        }
-    }
-    return value;
+// Valida si una cadena es un número válido
+bool Utils::isValidNumber(const std::string& input) {
+    return std::all_of(input.begin(), input.end(), ::isdigit);
 }
 
+// Convierte una cadena en un número entero, si se cumple que es un numero valido
+int Utils::convertToInt(const std::string& input) {
+    try {
+        return std::stoi(input);
+    } catch (const std::invalid_argument& e) {
+        throw std::invalid_argument("La entrada contiene caracteres no numéricos");
+    } catch (const std::out_of_range&) {
+        throw std::out_of_range("Entrada fuera de rango");
+    }
+}
 
-//Nuevo metodo anadido que permite validar el tipo de sangre
+// Solicita y valida un tipo de sangre válido
 std::string Utils::getValidatedBloodType(const std::string& prompt) {
     const std::vector<std::string> validBloodTypes = {
         "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-", "a+", "a-", "b+", "b-", "ab+", "ab-", "o+", "o-" 
@@ -50,7 +36,7 @@ std::string Utils::getValidatedBloodType(const std::string& prompt) {
         std::cout << prompt;
         std::getline(std::cin, input);
         if (std::find(validBloodTypes.begin(), validBloodTypes.end(), input) != validBloodTypes.end()) {
-            return input; // Si el tipo de sangre es válido, retornarlo
+            return input; 
         } else {
             std::cout << "Tipo de sangre no válido. Los tipos válidos son: A+, A-, B+, B-, AB+, AB-, O+, O-." << std::endl;
         }
