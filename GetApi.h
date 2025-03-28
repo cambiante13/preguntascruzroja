@@ -5,13 +5,14 @@
 #include <string>
 #include <iostream>
   
-class GetApi(){
+class GetApi{
     private:
         std::string telefono;
     public:
-        std::string verificarNumero(std::string telefono)const;//se encargara de hacer la peticion a la api de validar numero telefonico
+        std::string verificarNumero(std::string telefono);//se encargara de hacer la peticion a la api de validar numero telefonico
         
-
 }
 
 #endif // GETAPI_H
+
+
