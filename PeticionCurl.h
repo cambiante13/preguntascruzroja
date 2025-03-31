@@ -6,7 +6,7 @@
 class PeticionCurl {
 public:
     PeticionCurl();
-    std::string Peticion();  // Cambiamos a string para devolver la respuesta
+    std::string peticionC(std::string telefono);  // Cambiamos a string para devolver la respuesta
 };
 
 #endif // PETICIONCURL_H

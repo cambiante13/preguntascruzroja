@@ -7,9 +7,9 @@
 class GetApi{
     private:
         std::string telefono;
-        
+
     public:
-        int getApi();
+        GetApi();
         std::string apiverificarNumero(std::string telefono);//se encargara de hacer la peticion a la api de validar numero telefonico
         
 };

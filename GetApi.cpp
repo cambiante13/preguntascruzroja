@@ -3,15 +3,16 @@
 #include <string>
 #include "PeticionCurl.h"
 using namespace std;
-int GetApi::getApi() {
-       std::cout<<"instanciado"<<std::endl;
-       return 0;
+GetApi::GetApi() {
+       cout<<"instanciado"<<endl;
 }
 
-std::string GetApi::apiverificarNumero(std::string phone){
+string GetApi::apiverificarNumero(std::string phone){
 
        cout <<"Peticion TELEFONICA"<<endl;
-       string respuesta;
+       PeticionCurl peticion1;
+       peticion1.peticionC("3001620310");
+       string respuesta="hola";
 return respuesta;
 }
 

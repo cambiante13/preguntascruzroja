@@ -18,7 +18,7 @@ AUTOR DEL ARCHIVO: Victor Bucheli
 Resolucion de caso de estudio hecha por:
 
 - Valentina Montezuma Gonzalez - valentina.montezuma@correounivalle.edu.co - CODE(2242058)
-- Nombre - Correo Electrónico - CODE()
+- Julian Esteban Meneses- meneses.julian@correounivalle.edu.co - CODE(2042970)
 - Nombre - Correo Electrónico - CODE()
 - Nombre - Correo Electrónico - CODE()
 
@@ -44,6 +44,7 @@ FECHA DE ÚLTIMA MODIFICACIÓN: 22/03/25
 #include <iostream>
 #include <limits>
 #include <string>
+#include "GetApi.h"
 using namespace std;
 
 //Funcion principal del programa
@@ -51,6 +52,8 @@ int main() {
     std::string donorName;
     DonorManager donorManager("data.txt");
     UserInterface ui;
+    GetApi api1;
+    string a="300";//variable de pruebas
     int choice;
 
     while (true) {
@@ -94,8 +97,12 @@ int main() {
         case 5:
             std::cout << "Gracias por usar el Sistema de la Cruz Roja" << std::endl;
             return 0;
+        case 6: //caso de pruebas eliminar antes de entregar
+            cout<<"SECCION DE PRUEBAS"<<endl;
+            api1.apiverificarNumero(a);
+            break;    
         default:
-            std::cout << "Opción no válida. Inténtalo de nuevo.\n";
+            cout << "Opción no válida. Inténtalo de nuevo.\n";
             ui.waitForKeyPress();
             break;
         }
