@@ -38,14 +38,14 @@ void UserInterface::clearConsole() const {
 #ifdef _WIN32
     system("cls");
 #else
-    
+    system("clear");
 #endif
 }
 
 // Espera a que el usuario presione una tecla para continuar
 void UserInterface::waitForKeyPress() const {
     std::cout << "Presiona cualquier tecla para continuar...";
-    std::cin.ignore();
+    //std::cin.ignore();
     std::cin.get();
 }
 
