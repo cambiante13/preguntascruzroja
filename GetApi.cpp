@@ -8,18 +8,14 @@
 #include <string>
 using namespace std;
 
-string GetApi::verificarNumero(string numero){
+string GetApi::verificarNumero(string numero) {
+    PeticionCurl peticion;  // Crear objeto de PeticionCurl
+    peticion.PedirCurl();   // Llamar al método
 
-     std::string phone="3001620310";
-    // Inicializa una sesión de CURL y asigna el manejador a la variable 'hnd'
-    PeticionCurl::PedirCurl
-        nlohmann::json jsonResponse = nlohmann::json::parse(responseString);
+    // Aquí faltaba manejar la respuesta correctamente.
+    // La respuesta de la API debería ser capturada de alguna forma.
+    // Posiblemente deberíamos modificar PedirCurl() para que retorne un string con la respuesta.
 
-                // Acceder a los datos del JSON
-                std::cout << "IMC: " << jsonResponse["isValid"] << std::endl;
-         return 0;       
-       // return responseString;
-
-
-
+    return "Solicitud enviada"; // Retorno provisional
 }
+

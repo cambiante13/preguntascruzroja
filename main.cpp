@@ -6,7 +6,7 @@ Este es un trabajo realizado en la clase de Fundamentos de Porgramacion Orientad
 Las personas implicadas en la solcion del taller son:
 
 - Valentina Montezuma Gonzalez (202242059) (valentina.montezuma@correounivalle.edu.co)
--
+- 
 -
 -
 

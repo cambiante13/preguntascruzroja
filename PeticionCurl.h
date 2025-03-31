@@ -3,12 +3,9 @@
 #include <string>
 #include <iostream>
   
-class PeticionCurl{
-    private:
-        
-    public:
-        void PedirCurl();//se encargara de hacer la peticion a la api de validar numero telefonico
-        
-}
+class PeticionCurl {
+public:
+    std::string PedirCurl();  // Cambiamos a string para devolver la respuesta
+};
 
 #endif // PETICIONCURL_H
