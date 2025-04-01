@@ -13,6 +13,8 @@ private:
 public:
     // Constructor: Inicializa FileHandler con el nombre del archivo de datos
     FileHandler(const std::string& fileName);
+    //Constructor default
+    FileHandler();
 
     // Escribe los datos de un donante en el archivo
     void writeDataToFile(const Donor& donor) const;
@@ -25,6 +27,8 @@ public:
 
     // Muestra todos los donantes registrados en el archivo
     void displayAllDonors() const;
+    //permite gestionar un JSON
+    std::string JSON(std::string responseString) const;
 };
 
 #endif

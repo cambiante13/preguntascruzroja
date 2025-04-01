@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream> 
 #include <iostream>
+#include "nlohmann/json.hpp" 
 using namespace std;
 
 
@@ -48,10 +49,9 @@ string PeticionCurl::peticionC(string telefono){
         std::cerr << "Error en la solicitud CURL: " << curl_easy_strerror(ret) << std::endl;
     }
     
-    cout << responseString << endl;
     curl_slist_free_all(headers);
     curl_easy_cleanup(hnd);
-    return  "hello";
+    return  responseString;
 }
 
 

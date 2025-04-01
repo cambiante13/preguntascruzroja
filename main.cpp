@@ -97,11 +97,7 @@ int main() {
         case 5:
             ui.clearConsole();
             std::cout << "Gracias por usar el Sistema de la Cruz Roja" << std::endl;
-            return 0;
-        case 6: //caso de pruebas eliminar antes de entregar
-            cout<<"SECCION DE PRUEBAS"<<endl;
-            api1.apiverificarNumero(a);
-            break;    
+            return 0;  
         default:
             cout << "Opción no válida. Inténtalo de nuevo.\n";
             ui.waitForKeyPress();

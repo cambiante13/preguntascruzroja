@@ -1,6 +1,7 @@
 #include "DonorManager.h"
 #include "Utils.h"
 #include <iostream>
+#include "GetApi.h"
 
 // Este constructor inicializa DonorManager con el nombre del archivo de datos.
 DonorManager::DonorManager(const std::string& fileName) : fileHandler(fileName) {}
@@ -32,9 +33,17 @@ void DonorManager::getDonorDetails() {
     newDonor.setBloodType(bloodType, false);
 
     std::cout << "Número: ";
-    std::string number;
+    std::string number;     //DESDE ESTA SECCION ESTARA IMPLEMENTADO EL AJUSTE PARA VALIDAR EL NUMERO CON UNA API 
     std::getline(std::cin, number);
-
+    GetApi validar;
+    do
+    {
+        if(validar.apiverificarNumero(number)=="false"){
+            std::cout<<"Digita un numero de telefono valido"<<std::endl; //aqui el control de errores por numero no valido
+            std::getline(std::cin,number);
+        }
+    } while (validar.apiverificarNumero(number)=="false");
+    newDonor.setNumber(number,true);
     donors.push_back(newDonor);
     fileHandler.writeDataToFile(newDonor);
 }

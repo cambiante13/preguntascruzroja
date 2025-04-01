@@ -2,9 +2,27 @@
 #include <iostream>
 #include <fstream>
 #include <limits>
+#include "nlohmann/json.hpp"
+#include <string>
+//constructor default
+FileHandler::FileHandler(){
+    
+}
+
 
 // Constructor que inicializa FileHandler con el nombre del archivo de datos
 FileHandler::FileHandler(const std::string& fileName) : fileName(fileName) {}
+
+//genera Accede a los datos generados de un Json y los filtra
+    std::string FileHandler::JSON(std::string responseString) const{
+
+    nlohmann::json jsonResponse = nlohmann::json::parse(responseString);
+    // Acceder a los datos del JSON
+    std::string retorno = jsonResponse["isValid"].is_boolean() ? (jsonResponse["isValid"].get<bool>() ? "true" : "false") : jsonResponse["clave"].get<std::string>();
+
+    return retorno;
+
+    }
 
 // Escribe los datos de un donante en el archivo
 void FileHandler::writeDataToFile(const Donor& donor) const {
