@@ -8,13 +8,11 @@ using namespace std;
 
 
 PeticionCurl::PeticionCurl(){
-    cout<<"peticion creada"<<endl;
 }
 
 
 string PeticionCurl::peticionC(string telefono){
 
-    cout<<"iniciando peticion "<<" Recibi: "<<telefono<<endl;
     //aqui va todo la ejecucion
     CURL *hnd = curl_easy_init();
     std::stringstream url;
