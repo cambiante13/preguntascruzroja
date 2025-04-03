@@ -41,6 +41,7 @@ FECHA DE ÚLTIMA MODIFICACIÓN: 22/03/25
 #include "UserInterface.h"
 #include "FileHandler.h"
 #include "Donor.h"
+#include "BloodStatistics.h"  // Agregado para estadísticas
 #include <iostream>
 #include <limits>
 #include <string>
@@ -73,7 +74,8 @@ int main() {
         std::cout << "2. Buscar donante\n";
         std::cout << "3. Eliminar donante\n";
         std::cout << "4. Historial donantes\n";
-        std::cout << "5. Salir\n";
+        std::cout << "5. Estadísticas de los donantes\n";
+        std::cout << "6. Salir\n";
         std::cout << "Ingrese su elección: ";
         std::cin >> choice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -94,7 +96,14 @@ int main() {
         case 4:
             donorManager.displayAllDonors();
             break;
-        case 5:
+        case 5: 
+			statistics.statisticsPopulation();
+            statistics.statisticsBloodtype();
+            std::cout << "\nEl tipo de sangre más común en la base de datos es: " << statistics.databasePopulation() << std::endl;
+            statistics.databaseBloodtype();
+            ui.waitForKeyPress();
+            break;
+        case 6:
             ui.clearConsole();
             std::cout << "Gracias por usar el Sistema de la Cruz Roja" << std::endl;
             return 0;  
